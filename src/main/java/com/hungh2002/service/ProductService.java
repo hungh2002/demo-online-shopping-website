@@ -26,11 +26,13 @@ public class ProductService {
         Gson gson = new Gson();
         String orderByColumn = parameterUtils.getParam(request.getParameter("order-by"));
         String sortOrder = parameterUtils.getParam(request.getParameter("sortOrder"));
-        String productId = parameterUtils.getParam(request.getParameter("id"));
-        String condition = "id=?";
+        String productId = request.getParameter("id");
+        String condition = "";
         String limit = parameterUtils.getParam(request.getParameter("limit"));
 
-
+        if (productId != null) {
+            condition = "id=?";
+        }
 
         ProductDAO productDAO = new ProductDAO();
         try (ResultSet data =

@@ -16,12 +16,12 @@ const showNewReleases=() =>
       {
         return `
             <div class="col">
-            <div class="card h-100 card-size">
+            <a href="/product?id=${ item.id }" class="card h-100 card-size">
               <img src=${ item.image } class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title"> ${ item.name } (${ item.price }$) </h5>
               </div>
-            </div>
+            </a>
           </div>
             `;
       } );

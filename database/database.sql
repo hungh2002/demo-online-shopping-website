@@ -16,6 +16,40 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `customers`
+--
+
+DROP TABLE IF EXISTS `customers`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `customers` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `username` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `sessionId` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `customers_unique` (`username`),
+  UNIQUE KEY `customers_unique_1` (`sessionId`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `customers`
+--
+
+LOCK TABLES `customers` WRITE;
+/*!40000 ALTER TABLE `customers` DISABLE KEYS */;
+INSERT INTO `customers` VALUES
+(1,'user1','pass1','node0wqv247df0g2p1v2vssnuzychj0'),
+(3,'user2','pass2','node0mksqu6q87g8lk3nu7pghm0qw2'),
+(4,'user3','pass3','node01qmie738d486x1svn4ivobsuro0'),
+(5,'user4','pass4','node0zb7ogb4oqvym1ko0nybsh8vxt3'),
+(6,'user5','pass5','node0vel5v53nvwemsvxvgkro7vmf0'),
+(7,'user6','pass6','node01i5s3dmo0nly4cgxkmfyb13sj1');
+/*!40000 ALTER TABLE `customers` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `database_test`
 --
 
@@ -83,4 +117,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-21 21:53:40
+-- Dump completed on 2024-05-31  9:52:07

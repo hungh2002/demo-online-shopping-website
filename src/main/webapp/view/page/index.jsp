@@ -29,13 +29,6 @@
                     <%@ include file="../component/header.jsp" %>
                 </header>
 
-                <div>
-                    <c:forEach items="${pageContext.request.cookies}" var="c">
-                        AA ${c.name} - ${c.value}<br>
-                    </c:forEach>
-                    ${cookie.rememberMe.value}
-                </div>
-
                 <section class="container">
                     <%@ include file="../component/newReleases.jsp" %>
                 </section>

@@ -22,7 +22,10 @@ public class ProductDAO extends DBConnection {
         // execute the SQL statement
         try {
             PreparedStatement query = connection.prepareStatement(sqlQueryString);
-            query.setString(1, productId);
+            if (!where.equals("")) {
+                query.setString(1, productId);
+
+            }
             resultSet = query.executeQuery();
         } catch (Exception e) {
             // Print error if there is a problem
